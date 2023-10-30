@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  api:
+    image: "supertikuwa/air"
+    ports:
+      - "8080:80"
+    volumes:
+      - "./api:/app"
+    working_dir: /app
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+  websocket:
+    image: "supertikuwa/air"
+    ports:
+      - "8081:80"
+    volumes:
+      - "./websocket:/app"
+    working_dir: /app
